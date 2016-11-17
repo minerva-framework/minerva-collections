@@ -78,6 +78,9 @@ abstract class AbstractStorage implements StorageInterface
         if(!is_int($capacity))
             throw new InvalidCapacityException();
 
+        if($this->count() > $capacity)
+            throw new InvalidCapacityException();
+
         $this->capacity = $capacity;
     }
 
