@@ -24,4 +24,13 @@ class Collection extends AbstractStorage implements CollectionInterface
         $this->offsetSet($position, $item);
     }
 
+    /**
+     * @param callable $callback
+     * @return Collection
+     */
+    public function filter(callable $callback)
+    {
+        return parent::filter($callback);
+    }
+
 }
