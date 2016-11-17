@@ -23,4 +23,5 @@ A instalação pode ocorrer através do composer com o comando a seguir.
 | [Collection](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CCollection)     | Concluído | v1.0.0 |
 | [Dictionary](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CDictionary)     | Concluído | v1.0.0 |
 | [StorageEvent](https://gist.github.com/lucasdearaujo/1f52f8bb2516d553378881857452777e)   | Análise   | v1.1.0 |
-| [PropertyFilter](https://gist.github.com/lucasdearaujo/a22fccff12351cce712b6d6e296561c4) | Análise   | v1.1.0 |
+| [PropertyFilter](https://gist.github.com/lucasdearaujo/a22fccff12351cce712b6d6e296561c4) | Análise   | v1.2.0 |
+| [RecordTemplate](https://gist.github.com/lucasdearaujo/7098142f20dffe890908c4976ab9002a) | Análise   | v1.3.0 |
