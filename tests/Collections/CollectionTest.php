@@ -156,4 +156,25 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
         $collection->copyTo($numbers);
         $this->assertCount(3 , $numbers);
     }
+
+    /**
+     * @expectedException  \Minerva\Collections\Basis\Exceptions\ReadOnlyStorageException
+     */
+    public function testReadOnlyOffsetUnset()
+    {
+        $collection = new Collection();
+        $collection->add('Lucas');
+        $collection->lock();
+
+        $collection->offsetUnset(0);
+    }
+
+    public function testToArray()
+    {
+        $collection = new Collection();
+        $array = $collection->toArray();
+
+        $this->assertFalse(is_array($collection));
+        $this->assertTrue(is_array($array));
+    }
 }

@@ -32,5 +32,4 @@ class Collection extends AbstractStorage implements CollectionInterface
     {
         return parent::filter($callback);
     }
-
 }
