@@ -127,4 +127,33 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($exception1);
         $this->assertTrue($exception2);
     }
+
+    public function testCopyTo()
+    {
+        $array = [3, 2, 1, 4, 5, 6];
+
+        $collection = new Collection();
+        $collection->add(1);
+        $collection->add(2);
+        $collection->add(3);
+
+        // Copiando com override
+        $collection->copyTo($array);
+        $this->assertEquals(1, $collection[0]);
+        $this->assertEquals(2, $collection[1]);
+        $this->assertEquals(3, $collection[2]);
+
+        // Copiando sem override
+        $array = [9];
+        $collection->copyTo($array, false);
+        $this->assertEquals(9, $array[0]);
+        $this->assertEquals(2, $array[1]);
+        $this->assertEquals(3, $array[2]);
+        $this->assertCount(3, $array);
+
+        // Copiando para outra coleção
+        $numbers = new Collection();
+        $collection->copyTo($numbers);
+        $this->assertCount(3 , $numbers);
+    }
 }
