@@ -9,6 +9,6 @@ A biblioteca de coleções do minerva-framework tem como objetivo proporcionar u
 
 ## Instalação
 
-A instalação pode ocorrer através do composer.
+A instalação pode ocorrer através do composer com o comando a seguir.
 
 `php composer.phar install minerva-framework/minerva-collections`
