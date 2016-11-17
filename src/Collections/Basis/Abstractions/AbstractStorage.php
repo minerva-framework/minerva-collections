@@ -53,12 +53,10 @@ abstract class AbstractStorage implements StorageInterface
      */
     private function validateOffsetType($offset)
     {
-        if(!is_bool($offset)
-            && !is_int($offset)
-            && !is_float($offset)
-            && !is_string($offset))
+        if(!is_bool($offset) && !is_int($offset) && !is_float($offset) && !is_string($offset))
             throw new InvalidOffsetTypeException();
     }
+
 
     /**
      * @return boolean
