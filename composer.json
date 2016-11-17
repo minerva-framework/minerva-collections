@@ -1,0 +1,25 @@
+{
+  "name": "minerva-framework/minerva-collections",
+  "description": "Estrutura de coleções de dados para o minerva-framewok",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Lucas A. de Araújo",
+      "email": "lucas@minervasistemas.com.br"
+    }
+  ],
+  "autoload":{
+    "psr-4": {
+      "Minerva\\": "src"
+    }
+  },
+  "autoload-dev":{
+    "psr-4":{
+      "Tests\\": "tests"
+    }
+  },
+  "require": {
+    "phpunit/phpunit": "5.6.2"
+  }
+}
