@@ -46,6 +46,21 @@ abstract class AbstractStorage implements StorageInterface
     private $capacity = null;
 
     /**
+     * Valida um offset
+     *
+     * @param $offset
+     * @throws InvalidOffsetTypeException
+     */
+    private function validateOffsetType($offset)
+    {
+        if(!is_bool($offset)
+            && !is_int($offset)
+            && !is_float($offset)
+            && !is_string($offset))
+            throw new InvalidOffsetTypeException();
+    }
+
+    /**
      * @return boolean
      */
     public function isReadOnly()
@@ -275,12 +290,7 @@ abstract class AbstractStorage implements StorageInterface
         if($this->count() === $this->getCapacity())
             throw new MaxCapacityReachedException();
 
-        if(!is_bool($offset)
-            && !is_int($offset)
-            && !is_float($offset)
-            && !is_string($offset))
-            throw new InvalidOffsetTypeException();
-
+        $this->validateOffsetType($offset);
         $this->storage[$offset] = $value;
     }
 
@@ -303,6 +313,7 @@ abstract class AbstractStorage implements StorageInterface
         if($this->isReadOnly())
             throw new ReadOnlyStorageException();
 
+        $this->validateOffsetType($offset);
         unset($this->storage[$offset]);
     }
 
