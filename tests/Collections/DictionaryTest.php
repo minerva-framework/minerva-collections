@@ -44,4 +44,15 @@ class DictionaryTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($thrown);
         $this->assertEquals('tanque', $dictionary['tank']);
     }
+
+    public function testCurrent()
+    {
+        $dictionary = new Dictionary();
+        $dictionary['nome'] = 'Lucas';
+        $dictionary['idade'] = 21;
+
+        foreach ($dictionary as $propriedade => $valor){
+            $this->assertEquals($valor, $dictionary->current());
+        }
+    }
 }

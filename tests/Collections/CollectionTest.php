@@ -98,6 +98,11 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($maioresDeIdade[0]->idade, $lucas->idade);
         $this->assertCount(1, $maioresDeIdade);
+
+        foreach ($collection as $key => $pessoa){
+            $this->assertEquals($collection->current(), $pessoa);
+            $collection->offsetUnset($key);
+        }
     }
 
     public function testInvalidOffset()
