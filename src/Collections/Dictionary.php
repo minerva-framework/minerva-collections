@@ -3,6 +3,10 @@
 namespace Minerva\Collections;
 
 use Minerva\Collections\Basis\Abstractions\AbstractStorage;
+use Minerva\Collections\Basis\Exceptions\InvalidOffsetTypeException;
+use Minerva\Collections\Basis\Exceptions\MaxCapacityReachedException;
+use Minerva\Collections\Basis\Exceptions\OverrideOperationException;
+use Minerva\Collections\Basis\Exceptions\ReadOnlyStorageException;
 use Minerva\Collections\Basis\Interfaces\DictionaryInterface;
 
 /**
@@ -13,5 +17,51 @@ use Minerva\Collections\Basis\Interfaces\DictionaryInterface;
  */
 class Dictionary extends AbstractStorage implements DictionaryInterface
 {
-    
+    /**
+     * Define se o override de dados é permitido
+     *
+     * @var bool
+     */
+    protected $overrideAllowed = true;
+
+    /**
+     * Retorna se a classe permite override
+     *
+     * @return boolean
+     */
+    public function isOverrideAllowed()
+    {
+        return $this->overrideAllowed;
+    }
+
+    /**
+     * Define o comportamento do objeto acerca do override
+     *
+     * @param boolean $overrideAllowed
+     */
+    public function setOverrideAllowed($overrideAllowed)
+    {
+        $this->overrideAllowed = $overrideAllowed;
+    }
+
+    /**
+     * Define um valor para uma chave
+     *
+     * Esse método tem por finalidade apenas adicionar uma especialização
+     * para os contextos de utilização de um dicionário de dados.
+     *
+     * @param mixed $offset
+     * @param mixed $value
+     * @throws InvalidOffsetTypeException
+     * @throws MaxCapacityReachedException
+     * @throws ReadOnlyStorageException
+     * @throws OverrideOperationException
+     */
+    public function offsetSet($offset, $value)
+    {
+        if($this->offsetExists($offset) && !$this->isOverrideAllowed())
+            throw new OverrideOperationException();
+
+        parent::offsetSet($offset, $value);
+    }
 }
