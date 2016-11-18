@@ -22,14 +22,14 @@ abstract class AbstractStorage implements StorageInterface
      *
      * @var array
      */
-    private $storage = array();
+    protected $storage = array();
 
     /**
      * Elemento atual em operação
      *
      * @var int
      */
-    private $current = 0;
+    protected $current = 0;
 
     /**
      * Define se o storage é apenas para leitura

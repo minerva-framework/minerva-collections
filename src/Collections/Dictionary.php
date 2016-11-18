@@ -61,7 +61,45 @@ class Dictionary extends AbstractStorage implements DictionaryInterface
     {
         if($this->offsetExists($offset) && !$this->isOverrideAllowed())
             throw new OverrideOperationException();
-
+        
+        
         parent::offsetSet($offset, $value);
+    }
+
+    /**
+     * Retorna a chave do elemento atual no dicionário
+     *
+     * @return int|float|bool|string
+     */
+    public function key()
+    {
+        $keys = [];
+        
+        foreach ($this->storage as $key => $item){
+            $keys[] = $key;
+        }
+        
+        if(isset($keys[$this->current]))
+            return $keys[$this->current];
+    }
+
+    /**
+     * Retorna o elemento atual
+     *
+     * @return mixed
+     */
+    public function current()
+    {
+        return $this->storage[$this->key()];
+    }
+
+    /**
+     * Verifica se a posição atual é válida
+     *
+     * @return bool
+     */
+    public function valid()
+    {
+        return isset($this->storage[$this->key()]);
     }
 }
