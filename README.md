@@ -13,11 +13,14 @@ A instalação pode ocorrer através do composer com o comando a seguir.
 `php composer.phar install minerva-framework/minerva-collections`
 
 ## Documentação
+Nos links abaixos está disponível a documentação das funcionalidades desenvolvidas.
 
 * [Minerva\Collections\Collection](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CCollection)
 * [Minerva\Collections\Dictionary](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CDictionary)
 
 ## Roadmap
+Tabela com o plano de implementação de funcionalidades ao longo do tempo.
+
 | Funcionalidade | Status    | Versão |
 |----------------|-----------|--------|
 | [Collection](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CCollection)     | Concluído | v1.0.0 |
