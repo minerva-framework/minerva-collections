@@ -52,7 +52,6 @@ class Dictionary extends AbstractStorage implements DictionaryInterface
      *
      * @param mixed $offset
      * @param mixed $value
-     * @throws InvalidOffsetTypeException
      * @throws MaxCapacityReachedException
      * @throws ReadOnlyStorageException
      * @throws OverrideOperationException

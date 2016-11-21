@@ -4,10 +4,11 @@ namespace Minerva\Collections\Basis\Abstractions;
 
 use Minerva\Collections\Basis\Exceptions\InvalidCapacityException;
 use Minerva\Collections\Basis\Exceptions\InvalidOffsetException;
-use Minerva\Collections\Basis\Exceptions\InvalidOffsetTypeException;
 use Minerva\Collections\Basis\Exceptions\MaxCapacityReachedException;
 use Minerva\Collections\Basis\Interfaces\StorageInterface;
 use Minerva\Collections\Basis\Exceptions\ReadOnlyStorageException;
+use Zend\EventManager\EventManager;
+use Zend\EventManager\EventManagerInterface;
 
 /**
  * Implementação abstrata do storage
@@ -17,12 +18,20 @@ use Minerva\Collections\Basis\Exceptions\ReadOnlyStorageException;
  */
 abstract class AbstractStorage implements StorageInterface
 {
+
     /**
      * Array onde os dados serão armazenados
      *
      * @var array
      */
     protected $storage = array();
+
+    /**
+     * Eventos
+     *
+     * @var EventManagerInterface
+     */
+    protected $events;
 
     /**
      * Elemento atual em operação
@@ -44,6 +53,32 @@ abstract class AbstractStorage implements StorageInterface
      * @var int|null
      */
     private $capacity = null;
+
+    /**
+     * Define o manager de eventos
+     *
+     * @param EventManagerInterface $events
+     * @return void
+     */
+    public function setEventManager(EventManagerInterface $events)
+    {
+        $events->setIdentifiers([__CLASS__, get_called_class()]);
+        $this->events = $events;
+    }
+
+    /**
+     * Retorna o event manager
+     *
+     * @return EventManagerInterface
+     */
+    public function getEventManager()
+    {
+        if (null === $this->events) {
+            $this->setEventManager(new EventManager());
+        }
+
+        return $this->events;
+    }
 
     /**
      * @return boolean
@@ -138,10 +173,13 @@ abstract class AbstractStorage implements StorageInterface
      */
     public function clear()
     {
+        $this->getEventManager()->trigger('beforeClear', $this);
+
         if($this->isReadOnly())
             throw new ReadOnlyStorageException();
 
         $this->storage = array();
+        $this->getEventManager()->trigger('afterClear', $this);
     }
 
     /**
