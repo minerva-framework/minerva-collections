@@ -15,8 +15,8 @@ A instalação pode ocorrer através do composer com o comando a seguir.
 ## Documentação
 Documentação de uso das funcionalidades desenvolvidas.
 
-* [Minerva\Collections\Collection](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CCollection)
-* [Minerva\Collections\Dictionary](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CDictionary)
+* [Collection](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CCollection)
+* [Dictionary](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CDictionary)
 
 ## Roadmap
 Plano de implementação de novas funcionalidades.
