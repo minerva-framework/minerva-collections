@@ -17,6 +17,7 @@ Documentação de uso das funcionalidades desenvolvidas.
 
 * [Collection](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CCollection)
 * [Dictionary](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CDictionary)
+* [Eventos](https://github.com/minerva-framework/minerva-collections/wiki/Eventos)
 
 ## Roadmap
 Plano de implementação de novas funcionalidades.
