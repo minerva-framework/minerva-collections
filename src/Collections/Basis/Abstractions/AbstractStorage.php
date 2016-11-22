@@ -313,7 +313,9 @@ abstract class AbstractStorage implements StorageInterface
         if($this->count() === $this->getCapacity())
             throw new MaxCapacityReachedException();
 
+        $this->getEventManager()->trigger('beforeAdd', $this);
         $this->storage[$offset] = $value;
+        $this->getEventManager()->trigger('afterAdd', $this);
     }
 
     /**
