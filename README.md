@@ -18,15 +18,3 @@ Documentação de uso das funcionalidades desenvolvidas.
 * [Collection](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CCollection)
 * [Dictionary](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CDictionary)
 * [Eventos](https://github.com/minerva-framework/minerva-collections/wiki/Eventos)
-
-## Roadmap
-Plano de implementação de novas funcionalidades.
-
-| Funcionalidade | Status    | Versão |
-|----------------|-----------|--------|
-| [Collection](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CCollection)     | Concluído | v1.0.0 |
-| [Dictionary](https://github.com/minerva-framework/minerva-collections/wiki/Minerva%5CCollections%5CDictionary)     | Concluído | v1.0.0 |
-| [Eventos](https://github.com/minerva-framework/minerva-collections/wiki/Eventos)     | Concluído  | v1.1.0 |
-| [PropertyFilter](https://gist.github.com/lucasdearaujo/a22fccff12351cce712b6d6e296561c4)   | *Em Análise*   | v1.2.0 |
-| [RecordCollection](https://gist.github.com/lucasdearaujo/690816846b3b3ca9f4bd520ea2e44af7) | *Em Análise*   | v1.3.0 |
-| [MemoryStorage](https://gist.github.com/lucasdearaujo/a0c3a70c90aedb9b72c38eb57ce63abb)    | *Em Análise*   | v1.4.0 |
