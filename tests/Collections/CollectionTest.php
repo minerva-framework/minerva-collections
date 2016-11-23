@@ -182,4 +182,12 @@ class CollectionTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(is_array($collection));
         $this->assertTrue(is_array($array));
     }
+
+    public function testHas()
+    {
+        $collection = new Collection();
+        $collection->add('oi');
+
+        $this->assertTrue($collection->has('oi'));
+    }
 }
