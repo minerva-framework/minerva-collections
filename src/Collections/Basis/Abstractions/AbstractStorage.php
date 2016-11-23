@@ -120,6 +120,17 @@ abstract class AbstractStorage implements StorageInterface
     }
 
     /**
+     * Verifica se um item está na coleção
+     *
+     * @param mixed $item
+     * @return bool
+     */
+    public function has($item)
+    {
+        return in_array($item, $this->storage);
+    }
+
+    /**
      * Executa callback para cada elemento armazenado
      *
      * @param callable $callback
